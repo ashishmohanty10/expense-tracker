@@ -26,19 +26,24 @@ const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
   };
 
   return (
-    <li className={transaction.amount < 0 ? "minus" : "plus"}>
-      {transaction.text}
-      <span>
-        {sign}Rs{addCommas(Math.abs(transaction.amount))}
-      </span>
-
+    <div className="group flex  gap-x-4 items-center justify-between h-10 ">
+      <div className=" cursor-pointer font-medium">
+        <span className="text-sm ">{transaction.text}</span>:{" "}
+        <span
+          className={
+            transaction.amount < 0 ? " text-red-500" : " text-green-500"
+          }
+        >
+          {sign} Rs{addCommas(Math.abs(transaction.amount))}
+        </span>
+      </div>
       <button
         onClick={() => handleDeleteTransaction(transaction.id)}
-        className="delete-btn"
+        className="hidden group-hover:block w-fit bg-red-500 p-2 text-white font-bold "
       >
         x
       </button>
-    </li>
+    </div>
   );
 };
 

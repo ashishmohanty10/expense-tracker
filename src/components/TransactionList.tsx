@@ -10,16 +10,16 @@ const TransactionList = async () => {
     return <p className="error">{error}</p>;
   }
   return (
-    <>
-      <h3>Histor</h3>
+    <div className="px-4 md:px-0 md:w-1/3">
+      <h3 className="font-bold text-xl mb-5">History</h3>
 
-      <ul className="list">
+      <ul className="">
         {transactions &&
           transactions.map((transaction: Transaction) => (
             <TransactionItem key={transaction.id} transaction={transaction} />
           ))}
       </ul>
-    </>
+    </div>
   );
 };
 

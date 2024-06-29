@@ -22,9 +22,9 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={roboto.className}>
+        <body className={` ${roboto.className}`}>
           <Header />
-          <main className="container">{children}</main>
+          <main className="max-w-4xl mx-auto">{children}</main>
           <ToastContainer />
         </body>
       </html>

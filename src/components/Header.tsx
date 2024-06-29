@@ -6,13 +6,15 @@ const Heaader = async () => {
   const user = await checkUser();
 
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <h2>Expense Tracker</h2>
+    <nav className="h-14 bg-black">
+      <div className="flex items-center justify-between max-w-4xl mx-auto">
+        <h2 className="text-white font-bold text-2xl">Expense Tracker</h2>
 
-        <div>
+        <div className="flex items-center h-14">
           <SignedOut>
-            <SignInButton />
+            <div className="bg-white hover:bg-slate-700 hover:text-white duration-200 px-4 py-1 rounded-lg font-medium text-sm">
+              <SignInButton />
+            </div>
           </SignedOut>
 
           <SignedIn>

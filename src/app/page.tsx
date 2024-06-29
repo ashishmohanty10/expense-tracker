@@ -14,13 +14,17 @@ const HomePage = async () => {
   }
 
   return (
-    <main>
-      <h1>Welcome,{user.firstName}</h1>
+    <main className="py-5">
+      <h1 className="text-center text-4xl font-extrabold">
+        Welcome,{user.firstName}
+      </h1>
 
       <Balance />
       <IncomeExpense />
-      <AddTransactions />
-      <TransactionList />
+      <div className="md:flex justify-center items-start gap-x-10 mt-10 w-full">
+        <AddTransactions />
+        <TransactionList />
+      </div>
     </main>
   );
 };
