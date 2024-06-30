@@ -7,4 +7,4 @@
 
 ## Preview
 
-<img src="./public//image.png" />
+<img src="./public/image.png" />
