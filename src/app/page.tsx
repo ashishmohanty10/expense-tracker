@@ -16,7 +16,7 @@ const HomePage = async () => {
   return (
     <main className="py-5">
       <h1 className="text-center text-4xl font-extrabold">
-        Welcome,{user.firstName}
+        Welcome, {user.firstName}
       </h1>
 
       <Balance />

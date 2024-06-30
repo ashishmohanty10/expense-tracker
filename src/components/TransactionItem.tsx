@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 
 import React from "react";
 import deleteTransaction from "@/actions/deleteTransaction";
+import { Trash2 } from "lucide-react";
 
 const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
   const sign = transaction.amount < 0 ? "-" : "+";
@@ -26,9 +27,9 @@ const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
   };
 
   return (
-    <div className="group flex  gap-x-4 items-center justify-between h-10 ">
+    <div className="group flex gap-x-4 items-center justify-between h-10 hover:shadow-md px-2 rounded-md">
       <div className=" cursor-pointer font-medium">
-        <span className="text-sm ">{transaction.text}</span>:{" "}
+        <span className="text-lg ">{transaction.text}</span>:{" "}
         <span
           className={
             transaction.amount < 0 ? " text-red-500" : " text-green-500"
@@ -39,9 +40,9 @@ const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
       </div>
       <button
         onClick={() => handleDeleteTransaction(transaction.id)}
-        className="hidden group-hover:block w-fit bg-red-500 p-2 text-white font-bold "
+        className="hidden group-hover:block w-fit text-black hover:text-red-500 transition-all p-2  font-bold "
       >
-        x
+        <Trash2 />
       </button>
     </div>
   );
